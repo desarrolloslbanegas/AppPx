@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <title>Editar Historia Clinica</title>
+</head>
+<body>
+  <%- include('header') %>
+
+  
+  <br>
+  <h1>Editar Historia Clinica</h1>
+  <br>
+  <div class="agregarPaciente">
+
+
+  <form action="/pacientes/hc/edit/<%=resultados[0].id %>" method="post" autocomplete="off">
+    <label for="px">Paciente:</label>
+    <input type="tex" name="" id="" value="<%=resultados[0].nombreyapellido %>" disabled>
+<br>
+    
+  <input name="idHC" id="idHC" value="<%=resultados[0].id %>" type="hidden">
+
+
+    <label for="fecha" >Fecha de consulta:      
+    </label>
+    <input type="date" id="fecha" name="fecha" value="<%= new Date(resultados[0].fecha).toISOString().substring(0, 10) %>">
+
+    <br>
+
+
+
+
+    <label for="comentario">Comentario: </label>
+    <textarea id="comentario" name="comentario" required>
+
+      <%= resultados[0].comentario %>
+
+    </textarea>
+    <br>
+
+    
+
+    <br>
+
+
+    <button class="last" type="submit">Guardar cambios  </button>
+  </form>
+
+  <br><br><br><br><br>
+  </div>
+
+</body>
+
+</html>

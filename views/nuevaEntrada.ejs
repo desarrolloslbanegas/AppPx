@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <title>Nueva consulta</title>
+</head>
+<body>
+  <%- include('header') %>
+
+  <br>
+  <h1>Nueva entrada</h1>
+  <br>
+  <div class="agregarPaciente">
+    <form id="addForm" action="/pacientes/add" method="post" autocomplete="off">
+      <label for="px">Paciente:</label>
+      <select id="px" name="px" required>
+        <% resultados.forEach(paciente => { %>
+          <option value="<%= paciente.idpaciente %>">
+            <%= paciente.nombreyapellido %> |  
+            <% 
+              const fecha = new Date(paciente.fecha); 
+              const fechaFormateada = fecha < new Date('2000-01-01') ? 'Sin datos' : fecha.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: '2-digit' }); 
+            %>
+            <%= fechaFormateada %>
+          </option>
+        <% }); %>
+      </select>
+
+      <label for="fecha">Fecha de consulta:</label>
+      <input type="date" id="fecha" name="fecha" required min="2020-01-01" max="2030-01-01">
+
+      <br>
+
+      <label for="comentario">Comentario: </label>
+      <textarea id="comentario" name="comentario" required></textarea>
+      <br>
+
+      <br>
+
+      <button class="last" type="submit">Agregar</button>
+      <br><br><br><br>
+    </form>
+  </div>
+
+  <script>
+    // Interceptar el evento de envío del formulario
+    document.getElementById('addForm').addEventListener('submit', function(event) {
+      // Obtener el texto del paciente seleccionado en el formato "Nombre Apellido | Fecha"
+      const pacienteSelect = document.getElementById('px');
+      const selectedText = pacienteSelect.options[pacienteSelect.selectedIndex].text;
+  
+      // Separar el nombre y la fecha utilizando el '|' como delimitador
+      const [nombrePaciente, fechaConsulta] = selectedText.split('|').map(item => item.trim());
+  
+      // Mostrar confirmación con el nombre del paciente y la fecha
+      const confirmacion = confirm(`¿Desea guardar la consulta para el paciente  ${nombrePaciente} con fecha ${fechaConsulta}?`);
+  
+      // Si el usuario cancela, prevenir el envío del formulario
+      if (!confirmacion) {
+        event.preventDefault();
+      }
+    });
+  </script>
+  
+</body>
+
+</html>

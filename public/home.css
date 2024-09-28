@@ -1,0 +1,284 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: #1e1e1f;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #5f92bd;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Alinear a la izquierda y derecha */
+    }
+    
+    .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    }
+    
+    .topnav a:hover {
+    background-color: #567996;
+    color: rgb(255, 255, 255);
+    }
+    
+    .topnav a.active {
+    color: white;
+    background-color: #567996;
+    font-weight: 500;
+
+    }
+
+    .topnav n {
+    color: transparent !important;
+    height: 100%;
+    background-color: #bdbdbd;
+    text-size-adjust: auto;
+    font-size: 8px;
+    box-shadow: aqua;
+    box-shadow: 59px teal;
+  }
+    
+    @media screen and (max-width: 600px) {
+    .topnav {
+    flex-direction: column; /* Cambia la dirección del flujo en pantallas más pequeñas */
+    }
+    
+    .topnav a {
+    float: none; /* Elimina el float en pantallas más pequeñas */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    box-sizing: border-box;
+    }
+    }
+    
+  
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 100px; /* Ajusta el valor según sea necesario */
+    font-size: 18px;
+  }
+  
+
+
+  
+  
+  button {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #5f92bd;
+    border-radius: 2px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 25px;
+  }
+  
+  button:hover {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+    background-color: #121314;
+
+  }
+  
+  button:active {
+    transform: translateY(2px);
+    transition-duration: .35s;
+    background-color: #121314;
+
+  }
+
+
+  
+  button.last {
+    width: 100%;
+    height: 40px;
+    background-color: #5f92bd;
+  }
+
+    
+  button.last:hover {
+    background-color: #567996;
+  }
+  
+  button.last a {
+    text-decoration: none;
+    color: white
+
+  }
+
+  button.print {
+      position:fixed;
+      width:120px;
+      height:60px;
+      bottom:40px;
+      right:40px;
+      background-color:#5f92bd;
+      color:#FFF;
+      text-align:center;
+      box-shadow: 2px 2px 3px #999;
+  }
+
+  button.print a{
+    color: white;
+    text-decoration: none;
+  }
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  
+  }
+
+  .edit {
+    margin: 5px;
+  }
+  .edit input{
+
+    width: 50px;
+  }
+
+  .category {
+    text-align: center;
+  }
+  
+  input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .edit-link i.fa-pencil-alt {
+    margin-right: 5px; /* Añade un espacio entre el ícono y el texto (ajusta según sea necesario) */
+    color: #3c8cc2; /* Cambia el color según tu preferencia */
+    font-size: 16px; /* Cambia el tamaño según tu preferencia */
+    /* Otros estilos según sea necesario */
+}
+
+  
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 15px;
+    }
+  
+  
+
+  }
+  
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    background-color: #567996;
+    color: #ffffff;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+
+  }
+
+
+
+ h1 {
+  text-align: center;
+  margin: 30px;
+ }  
+
+  
+  /* Header/Navbar Styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #567996;
+    color: #ffffff;
+    width: 100%; /* Ajuste para ocupar toda la pantalla */
+  }
+  
+  #nav-toggle {
+    display: none;
+  }
+  
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #567996;
+  }
+  
+  nav a {
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+  }
+  
+  #nav-toggle:checked + nav {
+    display: flex;
+  }
+  
+  .options {
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 450px) {
+    .topnav a {
+       width: 100%;
+    }
+ }
+
+ @media screen and (max-width: 450px) {
+  .topnav a {
+     display: none;
+  }
+
+  #myTopnav .options {
+     display: flex;
+     flex-direction: column;
+  }
+
+  #myTopnav .options a {
+     display: block;
+     width: 100%;
+  }
+}
+
+ 
+@media screen and (max-width: 450px) {
+  .topnav a {
+     font-size: 14px; /* Ajusta el tamaño según sea necesario */
+  }
+}

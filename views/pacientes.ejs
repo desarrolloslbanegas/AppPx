@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/index.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <title>Nueva consulta</title>
+</head>
+<body>
+  <%- include('header') %>
+
+  <br>
+  <br>  <h1>Lista de pacientes</h1>
+    
+  <br>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre y Apellido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% pacientes.forEach(paciente => { %>
+            <tr>
+              
+          <td><a href="/pacientes/detalle/<%= paciente.id %>"><%= paciente.nombreyapellido %> </a></td>
+       
+
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+
+    <a href="nuevo-paciente">
+      <button class="print">Añadir paciente</button>
+    </a>
+
+
+
+
+</body>
+
+</html>
