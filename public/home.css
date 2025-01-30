@@ -282,3 +282,15 @@
      font-size: 14px; /* Ajusta el tamaño según sea necesario */
   }
 }
+
+@media only screen and (max-width: 600px) {
+form.formNuevoPaciente {
+        width: 100%;
+}
+
+textarea {
+width: 100%;
+}
+
+}
+
