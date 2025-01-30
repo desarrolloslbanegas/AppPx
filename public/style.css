@@ -162,3 +162,10 @@ word-wrap: break-word;
     font-size: 1.2rem; /* Ajusta según sea necesario */
   }
 }
+
+@media only screen and (max-width: 600px) {
+  #comentario {
+    height: 440px;
+    width: 100%;
+}
+}
