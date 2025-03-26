@@ -6,4 +6,6 @@ const loginValidation = [
 
 ];
 
+console.log("HOLIS")
+
 module.exports = loginValidation;
