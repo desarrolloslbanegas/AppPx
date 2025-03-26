@@ -19,7 +19,7 @@ const pool = new Pool({
 
 const login = async (req, res) => {
   console.log("Página de inicio...");
-  const resultados = await pool.query(SELECT 1);
+  const resultados = await pool.query('SELECT 1');
   res.render('login')
 };
 
