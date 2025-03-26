@@ -18,6 +18,7 @@ const pool = new Pool({
 
 
 const login = async (req, res) => {
+  console.log("Página de inicio...");
   res.render('login')
 };
 
