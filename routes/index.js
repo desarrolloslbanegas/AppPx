@@ -12,9 +12,10 @@ router.post('/login',loginValidation, controller.loginPost);
 
 router.get('/ping-db', async (req, res) => {
   try {
-    console.log("Conexión DB");
-    await pool.query('SELECT 1');
-    res.send('DB pinged successfully');
+    const query = 'INSERT INTO public."log" VALUES (4,23);
+    const result = await pool.query(query);
+    
+    console.log("Intento...")
   } catch (err) {
     res.status(500).send('DB error: ' + err.message);
   }
