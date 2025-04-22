@@ -18,20 +18,19 @@ const pool = new Pool({
 
 
 const login = async (req, res) => {
-  console.log("Página de inicio...");
-  const resultados = await pool.query('SELECT 1');
   res.render('login')
 };
 
 const testdb = async (req, res) => {
   try {
 
-    console.log("Intento...")
 
     const query = 'SELECT * FROM public.log';
     const result = await pool.query(query);
 
     console.log("Intento ok" + result)
+
+    res.send("Consulta a DB ok")
     
   } catch (error) {
     console.log("error catch")
