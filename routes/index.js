@@ -15,10 +15,10 @@ router.get('/ping-db', async (req, res) => {
 
     console.log("Intento...")
 
-    const query = 'INSERT INTO public.log VALUES (4,23)';
+    const query = 'INSERT INTO public.log VALUES (1,now())';
     const result = await pool.query(query);
     
-    console.log("Intento...")
+    console.log("Intento ok")
   } catch (err) {
     res.status(500).send('DB error: ' + err.message);
   }
