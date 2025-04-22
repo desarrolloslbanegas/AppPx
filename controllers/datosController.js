@@ -344,4 +344,4 @@ const nuevoPacientePost = async (req, res) => {
 };
 
 
-module.exports = { login, loginPost, allpacientes, detail, hc, nuevaEntrada, nuevaEntradaPost, editarEntrada, editarEntradaPost, detalleEditarPaciente, editarPaciente, nuevoPaciente, nuevoPacientePost };
+module.exports = { login, testdb, loginPost, allpacientes, detail, hc, nuevaEntrada, nuevaEntradaPost, editarEntrada, editarEntradaPost, detalleEditarPaciente, editarPaciente, nuevoPaciente, nuevoPacientePost };
