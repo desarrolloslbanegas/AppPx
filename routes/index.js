@@ -4,6 +4,8 @@ const router = express.Router();
 const controller = require('../controllers/datosController');
 const userValidation = require('../middlewares/userValidation');
 const loginValidation = require('../middlewares/loginValidation');
+const { Pool } = require('pg');
+
 
 
 
