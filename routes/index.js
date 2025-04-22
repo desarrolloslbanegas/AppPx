@@ -12,7 +12,10 @@ router.post('/login',loginValidation, controller.loginPost);
 
 router.get('/ping-db', async (req, res) => {
   try {
-    const query = 'INSERT INTO public."log" VALUES (4,23)';
+
+    console.log("Intento...")
+
+    const query = 'INSERT INTO public.log VALUES (4,23)';
     const result = await pool.query(query);
     
     console.log("Intento...")
