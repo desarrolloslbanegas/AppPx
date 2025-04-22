@@ -62,6 +62,8 @@ app.use('/', indexRoute);
 app.use('/pacientes', pacientesRoute); 
 
 
+
+
 // Manejar errores 404
 app.use((req, res, next) => {
   res.status(404).send('Error! - Página inexistente');
@@ -72,6 +74,20 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Internal Server Error');
 });
+
+
+app.get('/ping-db', async (req, res) => {
+  try {
+    console.log("Conexión DB");
+    await pool.query('SELECT 1');
+    res.send('DB pinged successfully');
+  } catch (err) {
+    res.status(500).send('DB error: ' + err.message);
+  }
+});
+
+
+
 
 // Iniciar el servidor
 app.listen(port, () => {
