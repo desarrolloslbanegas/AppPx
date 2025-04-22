@@ -5,6 +5,8 @@ const controller = require('../controllers/datosController');
 const userValidation = require('../middlewares/userValidation');
 const loginValidation = require('../middlewares/loginValidation');
 const { Pool } = require('pg');
+const { body, validationResult } = require('express-validator');
+
 
 
 
