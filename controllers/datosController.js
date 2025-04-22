@@ -23,6 +23,22 @@ const login = async (req, res) => {
   res.render('login')
 };
 
+const testdb = async (req, res) => {
+  try {
+
+    console.log("Intento...")
+
+    const query = 'SELECT * FROM public.log';
+    const result = await pool.query(query);
+
+    console.log("Intento ok" + result)
+    
+  } catch (error) {
+    console.log("error catch")
+    res.status(500).send('DB error: ' + error.message);
+  }
+}
+
 const loginPost = async (req, res) => {
   try {
 
