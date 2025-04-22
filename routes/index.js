@@ -14,19 +14,7 @@ const { body, validationResult } = require('express-validator');
 router.get('/login', loginValidation, controller.login);
 router.post('/login',loginValidation, controller.loginPost);
 
-router.get('/ping-db', async (req, res) => {
-  try {
-
-    console.log("Intento...")
-
-    const query = 'SELECT * FROM public.log';
-    const result = await pool.query(query);
-
-    console.log("Intento ok" + result)
-  } catch (err) {
-    res.status(500).send('DB error: ' + err.message);
-  }
-});
+router.get('/ping-db', controller.testdb);
 
 
 router.use(userValidation);
